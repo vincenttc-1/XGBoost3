@@ -52,7 +52,7 @@ xgb_model_loaded = pickle.load(open("xgbmodel.sav", "rb"))
 
 vectorizer.fit(kosaKata)
 
-print(tfidfvoc.vocabulary_)
+#print(tfidfvoc.vocabulary_)
 
 transform = vectorizer.transform(df2['Judul Berita (Bersih)']).toarray()
 
@@ -63,7 +63,7 @@ from sklearn.metrics import classification_report
 # make predictions for test data
 predict = xgb_model_loaded.predict(transform)
 predictions = [round(value) for value in predict]
-print(predict)
+#print(predict)
 
 from flask_cors import CORS
 from flask import Flask,jsonify,request
