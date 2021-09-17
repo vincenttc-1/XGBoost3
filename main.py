@@ -74,9 +74,7 @@ from flask_cors import CORS
 from flask import Flask,jsonify,request
 
 app = Flask(__name__)
-if __name__ == '__main__':
-    # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000)
+
 @app.route("/")
 def home():
     return "<h1>Running Flask on Google Colab!</h1>"
@@ -127,4 +125,6 @@ def postJsonHandler():
     print (content)
     return 'JSON posted'
 
-app.run()
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
