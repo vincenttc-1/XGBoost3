@@ -71,7 +71,6 @@ predictions = [round(value) for value in predict]
 print(predict)
 
 from flask_cors import CORS
-from flask_ngrok import run_with_ngrok
 from flask import Flask,jsonify,request
 
 app = Flask(__name__)
