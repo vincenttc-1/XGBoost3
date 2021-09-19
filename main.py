@@ -77,7 +77,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('CodeIgniter/application/views/main.php')
+    return "<h1>Running Flask on Google Colab!</h1>"
 
 @app.route('/main')
 def signUp():
