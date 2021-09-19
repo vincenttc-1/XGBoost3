@@ -71,13 +71,17 @@ predictions = [round(value) for value in predict]
 #print(predict)
 
 from flask_cors import CORS
-from flask import Flask,jsonify,request
+from flask import Flask,jsonify,request,render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Running Flask on Google Colab!</h1>"
+    return render_template('CodeIgniter/application/views/main.php')
+
+@app.route('/main')
+def signUp():
+    return render_template('CodeIgniter/application/views/main.php')
 
 @app.route('/api/sentence', methods=["GET"])
 def sentece():
