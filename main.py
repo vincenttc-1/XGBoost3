@@ -77,7 +77,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Running Flask on Google Colab!</h1>" 
+    return "<h1>Running Flask on Google Colab!</h1>"
 
 @app.route('/api/sentence', methods=["GET"])
 def sentece():
