@@ -79,10 +79,6 @@ app = Flask(__name__)
 def home():
     return "<h1>Running Flask on Google Colab!</h1>"
 
-@app.route('/main')
-def signUp():
-    return render_template('CodeIgniter/application/views/main.php')
-
 @app.route('/api/sentence', methods=["GET"])
 def sentece():
     arr_text = []
