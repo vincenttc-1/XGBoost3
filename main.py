@@ -82,13 +82,13 @@ def home():
 
 @app.route('/api/sentence', methods=["GET"])
 def sentece():
-    arr_text = []
-    text = request.args.get("text")
-    arr_text.append(text) 
-    clean_arr_text = list(map(text_preproc,arr_text))
-    x_sentence = vectorizer.transform(clean_arr_text)
+    arr_title = []
+    title = request.args.get("title")
+    arr_title.append(title) 
+    clean_arr_title = list(map(text_preproc,arr_title))
+    x_sentence = vectorizer.transform(clean_arr_title)
     predict = xgb_loaded_model.predict(x_sentence)
-    resp = jsonify({"text":text,"prediction":int(predict[0])})
+    resp = jsonify({"title":title,"prediction":int(predict[0])})
     return resp
 
 @app.route('/api/file', methods=["POST"])
