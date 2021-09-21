@@ -68,12 +68,13 @@ from sklearn.metrics import classification_report
 # make predictions for test data
 predict = xgb_model_loaded.predict(transform)
 predictions = [round(value) for value in predict]
-#print(predict)
+print(predict)
 
 from flask_cors import CORS
 from flask import Flask,jsonify,request,render_template
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def home():
