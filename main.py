@@ -87,7 +87,7 @@ def sentece():
     arr_title.append(title) 
     clean_arr_title = list(map(text_preproc,arr_title))
     x_sentence = vectorizer.transform(clean_arr_title)
-    predict = xgb_loaded_model.predict(x_sentence)
+    predict = xgb_model_loaded.predict(x_sentence)
     resp = jsonify({"title":title,"prediction":int(predict[0])})
     return resp
 
